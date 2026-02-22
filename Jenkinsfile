@@ -5,14 +5,14 @@ pipeline {
     maven 'Maven3' 
   }
   stages{
-    stages { "Cleanup Workspace"}{
+    stage { "Cleanup Workspace"}{
         steps {
         cleanWs()
         }
     }
     stage("Checkout from SCM"){
         steps {
-        git branch: 'main', credentialsId: 'github', url: 'https://github.com/roohhh-7/registerappdevops'
+        git branch: 'main', credentialsId: 'github', url: 'https://github.com/roohhh-7/registerappdevops.git'
         }
     }
     stage( "Build Application"){
